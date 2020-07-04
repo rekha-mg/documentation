@@ -1,9 +1,9 @@
-## 4 sJuly 2020
-####Eloquent ORM
+## 4 July 2020
+#### Eloquent ORM
 * The EloquentORM included with Laravel provides a beautiful, simple ActiveRecord implementation for working with your database. Each database table has a corresponding "Model" which is used to interact with that table.
 
 * Before getting started, be sure to configure a database connection in config/database.php.
-
+ 
 ###Basic Usage
 * To get started, create an Eloquent model. Models typically live in the app directory, but you are free to place them anywhere that can be auto-loaded according to your composer.json file. All Eloquent models extend Illuminate\Database\Eloquent\Model.
 
