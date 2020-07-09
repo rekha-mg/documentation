@@ -175,4 +175,22 @@ o generate a seeder, you may issue the make:seeder Artisan command. All seeders 
             }
         }
  
+ ### Kernel.php
+  
+  - By default csrf will be enabled. It has to disabled . It gives error 419-page expired and post,
+  put, patch and deleted will not work.
+  
+  - By disabling these will work.
+  
+  - CSRF Protection
+  Laravel makes it easy to protect your application from cross-site request forgery (CSRF) attacks. Cross-site request forgeries are a type of malicious exploit whereby unauthorized commands are performed on behalf of an authenticated user.
+  
+  Laravel automatically generates a CSRF "token" for each active user session managed by the application. This token is used to verify that the authenticated user is the one actually making the requests to the application.
+  
+  Anytime you define an HTML form in your application, you should include a hidden CSRF token field in the form so that the CSRF protection middleware can validate the request. You may use the @csrf Blade directive to generate the token field:
+  
+  <form method="POST" action="/profile">
+      @csrf
+      ...
+  </form>
  
