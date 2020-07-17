@@ -22,5 +22,17 @@ The following commands are used to control transactions.
 - ROLLBACK − to roll back the changes.
 
 - SAVEPOINT − creates points within the groups of transactions in which to ROLLBACK.
+>  SQL> SAVEPOINT SP1;
+Savepoint created.
+> SQL> DELETE FROM CUSTOMERS WHERE ID=1;
+1 row deleted.
+> SQL> SAVEPOINT SP2;
+Savepoint created.
+> SQL> DELETE FROM CUSTOMERS WHERE ID=2;
+1 row deleted.
+> SQL> SAVEPOINT SP3;
+Savepoint created.
+> SQL> DELETE FROM CUSTOMERS WHERE ID=3;
+1 row deleted.
 
 - SET TRANSACTION − Places a name on a transaction.
