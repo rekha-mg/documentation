@@ -41,7 +41,7 @@ Savepoint created.
 ### Database Transactions
 - You may use the transaction method on the DB facade to run a set of operations within a database transaction. If an exception is thrown within the transaction Closure, the transaction will automatically be rolled back. If the Closure executes successfully, the transaction will automatically be committed. You don't need to worry about manually rolling back or committing while using the transaction method:
 
-DB::transaction(function () {
+> DB::transaction(function () {
     DB::table('users')->update(['votes' => 1]);
 
     DB::table('posts')->delete();
