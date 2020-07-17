@@ -17,22 +17,22 @@ Transactions have the following four standard properties, usually referred to by
 Transaction Control
 The following commands are used to control transactions.
 
-- COMMIT − to save the changes.
+#### COMMIT − to save the changes.
+-SQL> DELETE FROM CUSTOMERS
+   WHERE AGE = 25;
+- SQL> COMMIT;
 
-- ROLLBACK − to roll back the changes.
+#### ROLLBACK − to roll back the changes.
+- SQL> DELETE FROM CUSTOMERS
+   WHERE AGE = 25;
+- SQL> ROLLBACK;
 
-- SAVEPOINT − creates points within the groups of transactions in which to ROLLBACK.
->  SQL> SAVEPOINT SP1;
-Savepoint created.
-> SQL> DELETE FROM CUSTOMERS WHERE ID=1;
+#### SAVEPOINT − creates points within the groups of transactions in which to ROLLBACK.
+-  SQL> SAVEPOINT SP1;
+ Savepoint created.
+- SQL> DELETE FROM CUSTOMERS WHERE ID=1;
 1 row deleted.
-> SQL> SAVEPOINT SP2;
+-  SQL> SAVEPOINT SP2;
 Savepoint created.
-> SQL> DELETE FROM CUSTOMERS WHERE ID=2;
-1 row deleted.
-> SQL> SAVEPOINT SP3;
-Savepoint created.
-> SQL> DELETE FROM CUSTOMERS WHERE ID=3;
-1 row deleted.
 
-- SET TRANSACTION − Places a name on a transaction.
+#### SET TRANSACTION − Places a name on a transaction.
