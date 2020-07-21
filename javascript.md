@@ -13,11 +13,28 @@
 Variable    Explanation Example
 - String: This is a sequence of text known as a string.
 -  To signify that the value is a string, enclose it in single quote marks. 
-         let myVariable = 'Bob';
-Number  This is a number. Numbers don't have quotes around them.    let myVariable = 10;
-Boolean This is a True/False value. The words true and false are special keywords that don't need quote marks.  let myVariable = true;
-Array   This is a structure that allows you to store multiple values in a single reference. let myVariable = [1,'Bob','Steve',10];
-Refer to each member of the array like this:
-myVariable[0], myVariable[1], etc.
-Object  This can be anything. Everything in JavaScript is an object, and can be stored in a variable. Keep this in mind as you learn.   let myVariable = document.querySelector('h1');
-All of the above examples too.
+>            let myVariable = 'Bob';
+- Number  This is a number. Numbers don't have quotes around them.  
+>    let myVariable = 10;
+- Boolean This is a True/False value.
+-  The words true and false are special keywords that don't need quote marks.  
+>  let myVariable = true;
+- Array   This is a structure that allows you to store multiple values in a single reference.
+>   let myVariable = [1,'Bob','Steve',10];
+- Refer to each member of the array like this:
+- >  myVariable[0], myVariable[1], etc.
+- Object  This can be anything. **Everything in JavaScript is an object**, and can be stored in a variable. Keep this in mind as you learn.
+>    let myVariable = document.querySelector('h1');
+#### Functions
+- Functions are a way of packaging functionality that you wish to reuse. It's possible to define a body of code as a function that executes when you call the function name in your code. This is a good alternative to repeatedly writing the same code. You have already seen some uses of functions previously. For example:
+
+> let myVariable = document.querySelector('h1');
+> alert('hello!');
+
+#### Events
+- Real interactivity on a website requires events handlers. These are code structures that **listen for activity in the browser**, and run code in response. The most obvious example is handling the click event, which is fired by the browser when you click on something with your mouse.
+-  To demonstrate this, enter the following into your console, then click on the current webpage:
+
+>document.querySelector('html').onclick = function() {
+    alert('Ouch! Stop poking me!');
+>}
