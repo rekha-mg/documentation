@@ -6,6 +6,7 @@
 $(document).ready(function(){
   $("button").click(function(){
     $("#div1").addClass("important blue");
+    $("#div2").addClass("magic");
   });
 });
 </script>
@@ -17,6 +18,9 @@ $(document).ready(function(){
 
 .blue {
   color: blue;
+}
+.magic{
+	visibility: hidden;
 }
 </style>
 </head>
