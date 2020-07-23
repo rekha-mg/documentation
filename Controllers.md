@@ -46,3 +46,4 @@
         
         php artisan make:controller PhotoController --resource
         
+
