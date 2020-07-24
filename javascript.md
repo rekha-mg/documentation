@@ -71,3 +71,32 @@ Variable    Explanation Example
 };
 >
 
+#### Accessing Object Properties with VariablesPassed
+- Another use of bracket notation on objects is to access a property which is stored as the value of a variable. This can be very useful for iterating through an object's properties or when accessing a lookup table.
+
+- Here is an example of using a variable to access a property:
+
+> var dogs = {
+>  Fido: "Mutt",  Hunter: "Doberman",  Snoopie: "Beagle"
+>};
+>var myDog = "Hunter";
+>var myBreed = dogs[myDog];
+>console.log(myBreed); // "Doberman"
+
+#### Delete Properties from a JavaScript ObjectPassed
+- We can also delete properties from objects like this:
+
+> delete ourDog.bark;
+
+-Example:
+
+> var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"],
+  "bark": "bow-wow"
+};
+> 
+delete ourDog.bark;
+> 
