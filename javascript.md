@@ -133,3 +133,57 @@ myObj.hasOwnProperty("middle"); // false
 ourStorage.cabinet["top drawer"].folder2;  // "secrets"
 ourStorage.desk.drawer; // "stapler"
 >
+### Explore Differences Between the var and let Keywords
+- One of the biggest problems with declaring variables with the var keyword is that you can overwrite variable declarations without an error.
+
+>
+var camper = 'James';
+var camper = 'David';
+console.log(camper);
+// logs 'David'
+>
+- A new keyword called let was introduced in ES6 to solve this potential issue with the var keyword. If you were to replace var with let in the variable declarations of the code above, the result would be an error.
+
+> let camper = 'James';
+>let camper = 'David'; // throws an error
+
+### Declare a Read-Only Variable with the const Keyword
+- A common practice when naming constants is to use all uppercase letters, with words separated by an underscore.
+- **Note:** It is common for developers to use uppercase variable identifiers for immutable values and lowercase or camelCase for mutable values (objects and arrays)
+
+### Use Arrow Functions to Write Concise Anonymous Functions
+In JavaScript, we often don't need to name our functions, especially when passing a function as an argument to another function. Instead, we create inline functions. We don't need to name these functions because we do not reuse them anywhere else.
+
+- To achieve this, we often use the following syntax:
+
+>const myFunc = function() {
+  const myVar = "value";
+  return myVar;
+}
+>
+- ES6 provides us with the syntactic sugar to not have to write anonymous functions this way. Instead, you can use arrow function syntax:
+
+> const myFunc = () => {
+  const myVar = "value";
+  return myVar;
+}
+>
+- When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword return as well as the brackets surrounding the code. This helps simplify smaller functions into one-line statements:
+
+> const myFunc = () => "value";
+This code will still return value by default.
+
+### Write Arrow Functions with Parameters
+- Just like a regular function, you can pass arguments into an arrow function.
+
+>// doubles input value and returns it
+const doubler = (item) => item * 2;
+If an arrow function has a single argument, the parentheses enclosing the argument may be omitted.
+>
+// the same function, without the argument parentheses
+const doubler = item => item * 2;
+It is possible to pass more than one argument into an arrow function.
+>
+// multiplies the first input value by the second and returns it
+const multiplier = (item, multi) => item * multi;
+>
