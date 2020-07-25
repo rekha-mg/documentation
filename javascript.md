@@ -100,3 +100,36 @@ Variable    Explanation Example
 > 
 delete ourDog.bark;
 > 
+#### Testing Objects for PropertiesPassed
+- Sometimes it is useful to check if the property of a given object exists or not. We can use the .hasOwnProperty(propname) method of objects to determine if that object has the given property name. .hasOwnProperty() returns true or false if the property is found or not.
+
+- Example
+
+>var myObj = {
+  top: "hat",
+  bottom: "pants"
+};
+myObj.hasOwnProperty("top");    // true
+myObj.hasOwnProperty("middle"); // false
+>
+
+#### Accessing Nested ObjectsPassed
+- The sub-properties of objects can be accessed by chaining together the dot or bracket notation.
+
+- Here is a nested object:
+
+>var ourStorage = {
+  "desk": {
+    "drawer": "stapler"
+  },
+  "cabinet": {
+    "top drawer": { 
+      "folder1": "a file",
+      "folder2": "secrets"
+    },
+    "bottom drawer": "soda"
+  }
+};
+ourStorage.cabinet["top drawer"].folder2;  // "secrets"
+ourStorage.desk.drawer; // "stapler"
+>
