@@ -82,6 +82,66 @@ It is possible to pass more than one argument into an arrow function.
 >const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
 >let arr2;
 
->arr2 = [...arr1];  // Change this line
+>arr2 = [...arr1]; 
 
 > console.log(arr2);
+
+#### Use Destructuring Assignment to Extract Values from Objects
+>const HIGH_TEMPERATURES = {
+>  yesterday: 75,
+>  today: 77,
+>  tomorrow: 80
+>};
+>const {today, tomorrow} = HIGH_TEMPERATURES;
+- today is equal to 77 and tomorrow is equal to 80.
+
+#### ES6: Use Destructuring Assignment to Assign Variables from Nested Objects
+>const {today,tomorrow} = HIGH_TEMPERATURES;
+> result will be ==> today is equal to 77 and tomorrow is equal to 80.
+
+> const LOCAL_FORECAST = {
+>  yesterday: { low: 61, high: 75 },
+>  today: { low: 64, high: 77 },
+>  tomorrow: { low: 68, high: 80 }
+>};
+
+> const { today: { low: lowToday, high: highToday } } = LOCAL_FORECAST;
+- lowToday is equal to 64 and highToday is equal to 77.
+- 
+### ES6: Use Destructuring Assignment to Assign Variables from Arrays.
+
+- One key difference between the spread operator and array destructuring is that the spread operator unpacks all contents of an array into a comma-separated list. Consequently, you cannot pick or choose which elements you want to assign to variables.
+
+#### Destructuring an array lets us do exactly that:
+
+>const [a, b] = [1, 2, 3, 4, 5, 6];
+> console.log(a, b); // 1, 2
+- The variable a is assigned the first value of the array, and b is assigned the second value of the array. We can also access the value at any index in an array with destructuring by using commas to reach the desired index:
+
+> const [a, b,,, c] = [1, 2, 3, 4, 5, 6];
+> console.log(a, b, c); // 1, 2, 5
+- Use destructuring assignment to swap the values of a and b so that a receives the value stored in b, and b receives the value stored in a.
+> let a = 8, b = 6;
+> [a ,b ]=[b, a];
+
+### ES6: Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements
+- In some situations involving array destructuring, we might want to collect the rest of the elements into a separate array.
+
+- The result is similar to Array.prototype.slice(), as shown below:
+
+> const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
+> console.log(a, b); // 1, 2
+> console.log(arr); // [3, 4, 5, 7]
+- Use destructuring assignment with the rest parameter to perform an effective Array.prototype.slice() so that arr is a sub-array of the original array source with the first two elements omitted.
+>const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+  "use strict";
+  // Only change code below this line
+ const [a, b,...arr] = list;
+  // change code above this line
+  return arr;
+}
+const arr = removeFirstTwo(source);
+console.log(arr); 
+>console.log(source);
+
