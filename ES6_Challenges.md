@@ -37,20 +37,20 @@ In JavaScript, we often don't need to name our functions, especially when passin
 
 > const myFunc = () => "value";
 This code will still return value by default.
-
+#### 26/7/2020
 ### Write Arrow Functions with Parameters
 - Just like a regular function, you can pass arguments into an arrow function.
 
 >// doubles input value and returns it
-const doubler = (item) => item * 2;
-If an arrow function has a single argument, the parentheses enclosing the argument may be omitted.
+>const doubler = (item) => item * 2;
+>If an arrow function has a single argument, the parentheses enclosing the argument may be omitted.
 >
-// the same function, without the argument parentheses
-const doubler = item => item * 2;
+- the same function, without the argument parentheses
+> const doubler = item => item * 2;
 It is possible to pass more than one argument into an arrow function.
 >
-// multiplies the first input value by the second and returns it
-const multiplier = (item, multi) => item * multi;
+- multiplies the first input value by the second and returns it
+>const multiplier = (item, multi) => item * multi;
 >
 ### Use the Rest Parameter with Function Parameters
 - In order to help us create more flexible functions, ES6 introduces the rest parameter for function parameters. With the rest parameter, you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function.
@@ -58,16 +58,30 @@ const multiplier = (item, multi) => item * multi;
 -Check out this code:
 
 >function howMany(...args) {
-  return "You have passed " + args.length + " arguments.";
-}
-console.log(howMany(0, 1, 2)); // You have passed 3 arguments.
-console.log(howMany("string", null, [1, 2, 3], { })); // You have passed 4 arguments.
+>  return "You have passed " + args.length + " arguments.";
+>}
+>console.log(howMany(0, 1, 2)); // You have passed 3 arguments.
+>console.log(howMany("string", null, [1, 2, 3], { })); // You have passed 4 arguments.
 >
 
 -The rest parameter eliminates the need to check the args array and allows us to apply map(), filter() and reduce() on the parameters array.
 
 >const sum = (...args) => {
-  return args.reduce((a, b) => a + b, 0);
-}
+>return args.reduce((a, b) => a + b, 0);
+>}
 >
+### Use the Spread Operator to Evaluate Arrays In-Place
+>const arr = [6, 89, 3, 45];
+>const maximus = Math.max(...arr); // returns 89
 
+- ...arr returns an unpacked array. In other words, it spreads the array. However, the spread operator only works in-place, like in an argument to a function or in an array literal. The following code will not work:
+
+>const spreaded = ...arr;
+
+#### Copy all contents of arr1 into another array arr2 using the spread operator.
+>const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+>let arr2;
+
+>arr2 = [...arr1];  // Change this line
+
+> console.log(arr2);
