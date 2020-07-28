@@ -53,11 +53,11 @@
 #### Match Ending String Patterns
 
 >let theEnding = "This is a never ending story";
-let storyRegex = /story$/;
-storyRegex.test(theEnding);
+>let storyRegex = /story$/;
+>storyRegex.test(theEnding);
 // Returns true
-let noEnding = "Sometimes a story will have to end";
-storyRegex.test(noEnding);
+>let noEnding = "Sometimes a story will have to end";
+>storyRegex.test(noEnding);
 // Returns false
 
 #### Match All Letters and Numbers
