@@ -78,3 +78,18 @@ Now all instances of Bird have the numLegs property.
 console.log(duck.numLegs);  // prints 2
 console.log(canary.numLegs);  // prints 2
 ```
+
+#### Change the Prototype to a New Object
+- A more efficient way is to set the prototype to a new object that already contains the properties. This way, the properties are added all at once:
+```
+Bird.prototype = {
+  numLegs: 2, 
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.name);
+  }
+};
+```
+
