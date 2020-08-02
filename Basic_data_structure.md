@@ -46,3 +46,102 @@ let todaysWeather = weatherConditions.slice(1, 3);
 // weatherConditions still equals ['rain', 'snow', 'sleet', 'hail', 'clear']
 ```
 
+#### Functional Programming: Use the map Method to Extract Data from an Array
+- The map method iterates over each item in an array and returns a new array containing the results of calling the callback function on each element. It does this without mutating the original array.
+
+- When the callback is used, it is passed three arguments. The first argument is the current element being processed. The second is the index of that element and the third is the array upon which the map method was called.
+
+- See below for an example using the map method on the users array to return a new array containing only the names of the users as elements. For simplicity, the example only uses the first argument of the callback.
+```
+const users = [
+  { name: 'John', age: 34 },
+  { name: 'Amy', age: 20 },
+  { name: 'camperCat', age: 10 }
+];
+
+const names = users.map(user => user.name);
+console.log(names); // [ 'John', 'Amy', 'camperCat' ]
+```
+
+```  mapped 2 maps from array (title and rating)
+const ratings = watchList.map(item => ({
+  title: item["Title"],
+  rating: item["imdbRating"]
+}));
+```
+
+#### Functional Programming: Implement map on a Prototype
+
+```
+Write your own Array.prototype.myMap(), which should behave exactly like Array.prototype.map(). You may use a for loop or the forEach method.
+
+Passed
+new_s should equal [46, 130, 196, 10].
+Passed
+Your code should not use the map method.
+
+var s = [23, 65, 98, 5];
+
+Array.prototype.myMap = function(callback){
+  var newArray = [];
+  // Only change code below this line
+  //this.forEach(a => newArray.push(callback(a)));//or this code
+for (let i=0;i<this.length;i++){
+ newArray.push(callback(this[i]));     
+  }
+  return newArray;
+};
+
+var new_s = s.myMap(function(item){
+  return item * 2;
+});
+```
+
+#### Functional Programming: Use the filter Method to Extract Data from an Array
+
+The variable watchList holds an array of objects with information on several movies. Use a combination of filter and map on watchList to assign a new array of objects with only title and rating keys. The new array should only include objects where imdbRating is greater than or equal to 8.0. Note that the rating values are saved as strings in the object and you may need to convert them into numbers to perform mathematical operations on them.
+
+```
+// Only change code below this line
+var filteredList = watchList
+  .map(movie => {
+    return {
+      title: movie.Title,
+      rating: movie.imdbRating
+    };
+  })
+  .filter(movie => {
+    // return true it will keep the item
+    // return false it will reject the item
+    return parseFloat(movie.rating) >= 8.0;
+  });
+
+// Only change code above this line
+
+console.log(filteredList);
+```
+
+#### Functional Programming: Use the reduce Method to Analyze Data
+```
+const users = [
+  { name: 'John', age: 34 },
+  { name: 'Amy', age: 20 },
+  { name: 'camperCat', age: 10 }
+];
+
+const sumOfAges = users.reduce((sum, user) => sum + user.age, 0);
+console.log(sumOfAges); // 64
+```
+
+#### Functional Programming: Sort an Array Alphabetically using the sort Method
+```
+function alphabeticalOrder(arr) {
+  // Only change code below this line
+return arr.sort(function(a, b) {
+    return a === b ? 0 : a < b ? -1 : 1;
+  });
+
+  // Only change code above this line
+}
+alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
+```
