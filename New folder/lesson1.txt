@@ -1,0 +1,10 @@
+oops concept
+
+ object
+ class
+ polymorphism
+ data abstraction
+ data encapsulation
+ message passing
+ inheritance
+  
