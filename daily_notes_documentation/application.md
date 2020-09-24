@@ -1,24 +1,24 @@
-###Applications are of three types:
+### Applications are of three types:
 
 1. Stand alone application
 2. Client server application
 3. Web based application
 ___
 
-#####1. Stand alone application:
+##### 1. Stand alone application:
 
 software installed in one computer and used by only one person.
 
 For ex – Installing s/w of a Calculator, Adobe Photoshop, MS Office, AutoCad
 
-#####Advantages:
+##### Advantages:
 * Faster in access.
 * Secured from Data hacking and virus.
 ##### Disadvantages:
 
-+ Single user access at a time.
+* Single user access at a time.
 
- ##### Installation is required.
+##### Installation is required.
 * End user system resources utilized.
 * No data sharing
 * Maintenance is tough with respect to both user and company
